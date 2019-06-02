@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   	document.getElementById("banner").style.backgroundImage = "url('pics/pic"+index+".jpg')";
   	image_ind = (image_ind+1)%5;
   }
+  function spool_val(update_func, element, up_or_down)
+  {
+  	
+  }
   function interpolate_gradient(element, gradient_val, on_or_off) 
   {
   	if (on_or_off) // if our user has hovered over the element
