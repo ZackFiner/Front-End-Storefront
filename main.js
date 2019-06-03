@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   var gradient_val = []
   var image_ind = 0;
+  var option_bar = document.getElementById("option-bar")
+  var option_bar_offset = option_bar.offsetTop;
   setInterval(swapImage, 10000);
 
   function swapImage() {
@@ -53,18 +55,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }, element, grad_ind);
     }
   }
+
   function bind_gradient_function(element, grad_ind)
   {
   	element.addEventListener("mouseover", function() {interpolate_gradient(element, grad_ind, true)});
   	element.addEventListener("mouseout", function() {interpolate_gradient(element, grad_ind, false)});
   }
+  
   button_list = document.getElementsByClassName("bar-button")
   for (var i = 0; i < button_list.length; i++)
   {
   	gradient_val.push({spool_timer: -1, current_gradient: 0, current_dir: 0});
   	bind_gradient_function(button_list[i], i);
   }
-  console.log(gradient_val)
+
+  window.onscroll=function(){
+    if (window.pageYOffset >= option_bar_offset)
+    {
+      option_bar.classList.add("sticky")
+    }
+    else
+    {
+      option_bar.classList.remove("sticky")
+    }
+  }
+  //document.getElementById("search-area").addEventListener("onselect", function(){target = document.getElementById("search-area"); target.placeholder = ""})
   // function slow_gradient()
   // {
   // 	console.log("called")
