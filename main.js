@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   	document.getElementById("banner").style.backgroundImage = "url('pics/pic"+index+".jpg')";
   	image_ind = (image_ind+1)%5;
   }
+
   function spool_val(update_func, element, grad_ind)
   {
     target = gradient_val[grad_ind];
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       target.spool_timer = -1;
     }
   }
+
   function interpolate_gradient(element, grad_ind, on_or_off) 
   {
   	if (on_or_off) // if our user has hovered over the element
@@ -51,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let fade1 = (interpolation)*0.59;
         let fade2 = (interpolation)*0.29;
         let fade3 = 100;
-        // element.style.background = "linear-gradient(180deg, rgba(5,5,5,1) "+fade1+"%, rgba(29,29,29,1) "+fade2+"%, rgba(59,59,59,1) "+fade3+"%)";
         element.style.background = "radial-gradient(at bottom, rgba("+fade1+","+fade1+","+fade1+",1),rgba("+fade2+","+fade2+","+fade2+",1),rgba(5,5,5,1))";
       }, element, grad_ind);
     }
@@ -80,10 +81,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
       option_bar.classList.remove("sticky")
     }
   }
-  //document.getElementById("search-area").addEventListener("onselect", function(){target = document.getElementById("search-area"); target.placeholder = ""})
-  // function slow_gradient()
-  // {
-  // 	console.log("called")
-  // }
 
 });

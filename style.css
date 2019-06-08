@@ -33,6 +33,10 @@
 #search-entry-area {
 	width: 50%;
 }
+.header-wrapper {
+	position:relative;
+
+}
 .page-header {
 	display: flex;
 	justify-content:  center;
@@ -47,10 +51,11 @@
 }
 .title-text {
 	position: absolute;
-	font: normal 32px Verdana, Arial, sans-serif;
+	font: normal 100% Verdana, Arial, sans-serif;
 	color: white;
 	top: 0%;
-	border-radius: 20px;
+	height: 50%;
+	border-radius: 50%;
 	/*align-self: center;*/
 }
 .product {
@@ -100,7 +105,4 @@
 	background-image: url("pics/pic1.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
-}
-.picture {
-
 }
