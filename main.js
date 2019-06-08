@@ -48,10 +48,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       spool_val(function(){
         interpolation = gradient_val[grad_ind].current_gradient
         element.style.background = "rgb(5,5,5)";
-        let fade1 = 100-interpolation
-        let fade2 = interpolation/2
-        let fade3 = 100
-        element.style.background = "linear-gradient(180deg, rgba(5,5,5,1) "+fade1+"%, rgba(29,29,29,1) "+fade2+"%, rgba(59,59,59,1) "+fade3+"%)";
+        let fade1 = (interpolation)*0.59;
+        let fade2 = (interpolation)*0.29;
+        let fade3 = 100;
+        // element.style.background = "linear-gradient(180deg, rgba(5,5,5,1) "+fade1+"%, rgba(29,29,29,1) "+fade2+"%, rgba(59,59,59,1) "+fade3+"%)";
+        element.style.background = "radial-gradient(at bottom, rgba("+fade1+","+fade1+","+fade1+",1),rgba("+fade2+","+fade2+","+fade2+",1),rgba(5,5,5,1))";
       }, element, grad_ind);
     }
   }
