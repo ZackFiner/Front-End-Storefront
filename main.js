@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var image_ind = 0;
   var option_bar = document.getElementById("option-bar")
   var option_bar_offset = option_bar.offsetTop;
-  setInterval(swapImage, 10000);
+  var search_toggle = false;
+  setInterval(swapImage, 2000);
 
   function swapImage() {
   	index = image_ind + 1;
-  	document.getElementById("banner").style.backgroundImage = "url('pics/pic"+index+".jpg')";
+    document.getElementById("banner").style.backgroundImage = "url('pics/pic"+index+".jpg')";
+    document.getElementById("banner").style.transition = "all 1s";
   	image_ind = (image_ind+1)%5;
   }
 
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       spool_val(function(){
         interpolation = gradient_val[grad_ind].current_gradient
         element.style.background = "rgb(5,5,5)";
-        let fade1 = (interpolation)*0.59;
+        let fade1 = (interpolation)*0.89;
         let fade2 = (interpolation)*0.29;
         let fade3 = 100;
         element.style.background = "radial-gradient(at bottom, rgba("+fade1+","+fade1+","+fade1+",1),rgba("+fade2+","+fade2+","+fade2+",1),rgba(5,5,5,1))";
@@ -81,5 +83,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
       option_bar.classList.remove("sticky")
     }
   }
+
+  function toggleSearch()
+  {
+    entry_bar = document.getElementById("search-entry-area");
+    if (search_toggle)
+    {
+      entry_bar.style.width = "0%";
+      setTimeout(function() {entry_bar.style.display = "None";}, 850); // we need to wait for our transition to finish before hiding the element
+      //close
+    }
+    else
+    {
+      entry_bar.style.display = "Flex";
+      setTimeout(function() {entry_bar.style.width = "90%";}, 1);
+      //open
+    }
+    search_toggle = !search_toggle;
+  }
+  document.getElementById("search-icon").addEventListener("click", toggleSearch);
 
 });
