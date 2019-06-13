@@ -42,12 +42,13 @@
 }
 .title-text {
 	position: absolute;
-	font: normal 100% Verdana, Arial, sans-serif;
+	font: normal 5vh Verdana, Arial, sans-serif;
 	color: white;
 	top: 0%;
 	height: 50%;
 	border-radius: 50%;
-	/*align-self: center;*/
+	user-select: none;
+	pointer-events: none;
 }
 .product {
 	/* border: solid black; */

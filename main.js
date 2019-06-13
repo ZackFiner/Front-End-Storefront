@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function bind_gradient_function(element, grad_ind)
   {
   	element.addEventListener("mouseover", function() {interpolate_gradient(element, grad_ind, true)});
-  	element.addEventListener("mouseout", function() {interpolate_gradient(element, grad_ind, false)});
+    element.addEventListener("mouseout", function() {interpolate_gradient(element, grad_ind, false)});
   }
   
   button_list = document.getElementsByClassName("bar-button")
